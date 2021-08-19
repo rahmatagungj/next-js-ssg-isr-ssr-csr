@@ -30,6 +30,8 @@ a {
 
 @media screen and (max-width: 600px) {
   .content {
+    width: 80%;
+    left: 55%;
     font-size: 1rem;
   }
 }
