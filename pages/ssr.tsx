@@ -1,26 +1,24 @@
 import Head from "next/head";
 
-interface isrProps {
+interface ssrProps {
   name: string;
 }
 
-const isr = ({ name }: isrProps) => {
+const ssr = ({ name }: ssrProps) => {
   return (
     <div>
       <Head>
-        <title>Inceremental Site Generation - {name}</title>
+        <title>Server Side Rendering - {name}</title>
       </Head>
       <div className="content">
         <h2>{name}</h2>
-        <p>
-          This page is Rendering with ISR (Inceremental Static Regeneration)
-        </p>
+        <p>This page is Rendering with SSG (Server Side Rendering)</p>
       </div>
     </div>
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await fetch("http://localhost:3000/api/name");
   const json = await data.json();
 
@@ -28,8 +26,7 @@ export async function getStaticProps() {
     props: {
       name: json.name,
     },
-    revalidate: 60,
   };
 }
 
-export default isr;
+export default ssr;

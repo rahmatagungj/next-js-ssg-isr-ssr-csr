@@ -11,14 +11,14 @@ const ssg = ({ name }: ssgProps) => {
         <title>Static Site Generation - {name}</title>
       </Head>
       <div className="content">
-        <h2>Hello my name is {name}</h2>
+        <h2>{name}</h2>
         <p>This page is Rendering with SSG (Static Site Generation)</p>
       </div>
     </div>
   );
 };
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps() {
   const data = await fetch("http://localhost:3000/api/name");
   const json = await data.json();
 

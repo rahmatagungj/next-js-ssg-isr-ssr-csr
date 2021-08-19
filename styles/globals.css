@@ -22,3 +22,14 @@ a {
   transform: translate(-50%, -50%);
   font-size: 1.5rem;
 }
+
+.content a {
+  color: #7164e6;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    font-size: 1rem;
+  }
+}
