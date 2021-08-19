@@ -21,7 +21,9 @@ const isr = ({ name }: isrProps) => {
 };
 
 export async function getStaticProps() {
-  const data = await fetch("http://localhost:3000/api/name");
+  const data = await fetch(
+    "https://raw.githubusercontent.com/rahmatagungj/next-js-ssg-isr-ssr-csr/master/fake-api/name.json"
+  );
   const json = await data.json();
 
   return {

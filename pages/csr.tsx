@@ -13,7 +13,9 @@ const Csr = () => {
   const getAllData = async () => {
     setIsLoading(true);
     try {
-      const data = await fetch("http://localhost:3000/api/name");
+      const data = await fetch(
+        "https://raw.githubusercontent.com/rahmatagungj/next-js-ssg-isr-ssr-csr/master/fake-api/name.json"
+      );
       const json = await data.json();
       setData(json);
     } catch (e) {
