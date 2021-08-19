@@ -1,14 +1,14 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import React from "react";
 
 interface dataJson {
   name: string;
 }
 
-const csr = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [data, setData] = useState<dataJson | null>(null);
-  const [isError, setIsError] = useState<boolean>(false);
+const Csr = () => {
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [data, setData] = React.useState<dataJson | null>(null);
+  const [isError, setIsError] = React.useState<boolean>(false);
 
   const getAllData = async () => {
     setIsLoading(true);
@@ -22,7 +22,7 @@ const csr = () => {
     setIsLoading(false);
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     getAllData();
     return () => {
       setData(null);
@@ -49,4 +49,4 @@ const csr = () => {
   );
 };
 
-export default csr;
+export default Csr;
